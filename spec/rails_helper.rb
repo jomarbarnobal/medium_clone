@@ -67,7 +67,7 @@ RSpec.configure do |config|
         uncommitted transaction data setup over the spec's database connection.
       MSG
     end
-    DatabaseCleaner.clean_with(:truncation)
+  DatabaseCleaner.clean_with(:truncation)
   end
 
   config.before(:each) do
@@ -96,4 +96,5 @@ RSpec.configure do |config|
   end
 
   config.include Features, type: :feature 
+
 end

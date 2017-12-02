@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature "User Signing in" do
 
   background do
-    @user = User.create(email: "example@gmail.com", password: "omizsaintr", password_confirmation: "omizsaintr")
+    @user = create(:user)
   end
 
 
