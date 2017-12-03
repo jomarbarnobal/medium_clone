@@ -9,16 +9,14 @@
   </head>
 
   <body>
-    <header>
-      <%= link_to "Write a story", new_post_path %>
-      <% if user_signed_in? %>
-        <%= current_user.email %>
-      <% end %>
-    </header>
 
+    <%= render partial: 'shared/main_nav' %>
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <%= yield %>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
