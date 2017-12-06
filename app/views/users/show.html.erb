@@ -1,5 +1,15 @@
-
-<h1>User profile</h1>
+<h1>New Username</h1>
 <div class="edit">
-  <%= link_to "Edit profile", edit_user_path(@user), class: 'btn btn-primary' %>
+  <% if user_signed_in? && current_user.id == @user.id%>
+    <%= link_to "Edit profile", edit_user_path(@user), class: 'btn btn-primary' %>
+    <%= user_avatar(@user) %>
+      <br />
+      <%= @user.username %>
+      <br />
+  <% else %>
+      <%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
+      <br />
+      <%= @user.username %>
+      <br />
+      <% end %>
 </div>
