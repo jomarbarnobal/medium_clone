@@ -3,13 +3,13 @@
   <% if user_signed_in? && current_user.id == @user.id%>
     <%= link_to "Edit profile", edit_user_path(@user), class: 'btn btn-primary' %>
     <%= user_avatar(@user) %>
-      <br />
-      <%= @user.username %>
-      <br />
+    <br />
+    <%= @user.username %>
+    <br />
   <% else %>
-      <%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
-      <br />
-      <%= @user.username %>
-      <br />
-      <% end %>
+    <%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
+    <br />
+    <%= @user.username %>
+    <br />
+  <% end %>
 </div>

@@ -11,7 +11,11 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user
+      if params[:user][:avatar].present?
+        render :crop
+      else
+      redirect_to @user, notice: "Sucessfully updated user."
+      end
     else
       flash.now[:alert] = "Something went wrong. Please try again"
       render :edit, alert: "Could not update, Please try again"
@@ -33,6 +37,6 @@ class UsersController < ApplicationController
   
 
     def user_params
-      params.require(:user).permit(:username, :avatar )
+      params.require(:user).permit(:username, :avatar, :crop_x, :crop_y, :crop_w, :crop_h )
     end
 end
