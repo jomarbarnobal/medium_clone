@@ -6,10 +6,12 @@
     <br />
     <%= @user.username %>
     <br />
+    <%= @user.description %>
   <% else %>
     <%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
     <br />
     <%= @user.username %>
     <br />
+    <%= @user.description %>
   <% end %>
 </div>

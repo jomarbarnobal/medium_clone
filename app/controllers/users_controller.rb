@@ -37,6 +37,6 @@ class UsersController < ApplicationController
   
 
     def user_params
-      params.require(:user).permit(:username, :avatar, :crop_x, :crop_y, :crop_w, :crop_h )
+      params.require(:user).permit(:username, :avatar, :description, :crop_x, :crop_y, :crop_w, :crop_h )
     end
 end
