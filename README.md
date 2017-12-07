@@ -6,14 +6,15 @@ application up and running.
 Things you may want to cover:
 
 ## Ruby version
-** 2.4.0 ** <br />
-*with rails version 5.1*
+2.4.0 ** <br />
+with rails version 5.1*
 
 
 ## Configuration
-** Bundle install **
-* Setup database *
-* run db:create db:migrate *
+
+Bundle install
+Setup database
+run db:create db:migrate
   
 * Database
 * Use postgresql
