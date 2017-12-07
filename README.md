@@ -21,6 +21,6 @@ run rake db:create db:migrate
 Use postgresql
   
 ### How to run the test suite
-Is use rspec-rails with capybara and factorybot then faker <br />
+I use rspec-rails with capybara and factorybot then faker <br />
 run rspec
 
