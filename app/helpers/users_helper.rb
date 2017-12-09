@@ -7,4 +7,13 @@ module UsersHelper
       image_tag "default-avatar.png", width: size
     end
   end
+
+  def user_name?
+    if current_user.username
+        current_user.username
+      else
+        current_user.email
+    end
+  end
+
 end

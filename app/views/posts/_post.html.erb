@@ -1,10 +1,25 @@
-<div class=""> 
-  <%= link_to post.user.email, user_path(post.user)%>
-  <br />
-  <%= post.username%>
-  <br />
-  <%= post.title %>
-  <br>
-  <%= post.body%>
+<div class="post-panel"> 
+  <span class="recomended">Featured and recomended by others</span>
+  <div class="post-header">
+    <div class="post-avatar">
+      <%= user_avatar(post.user, size: 40)%>
+    </div>
+    <div class="post-info">
+      <%= link_to post.username, user_path(post.user)%>
+      <br>
+      <span class="time-created">
+        <%= time_ago_in_words(post.created_at) %> ago 
+      </span>
+    </div>
+  </div>
+  <div class="post-content">
+    <%= post.title %>
+    <br>
+    <%= post.body%>
+  </div>
+  <div class="post-action clearfix">
+    <a class="float-left" href="#">link</a>
+    <a class="float-right" href="#">11 response</a>
+  </div>
 </div>
 

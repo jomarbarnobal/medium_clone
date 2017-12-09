@@ -1,12 +1,16 @@
-<h1>Edit User Profile</h1>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1>Edit User Profile</h1>
 
-<%= form_for(@user) do |f| %>
-  <%= f.file_field :avatar %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+    <%= form_for(@user) do |f| %>
+      <%= f.file_field :avatar %>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
 
-  <%= f.submit "Save changes"%>
-<% end %>
+      <%= f.submit "Save changes"%>
+    <% end %>
+  </div>
+</div>
