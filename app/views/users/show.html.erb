@@ -12,10 +12,10 @@
   </div>
 </div>
 
-<% unless user_signed_in? && !current_user?(@user) %>
+<% if user_signed_in? && !current_user?(@user) %>
   <% if current_user.following?(@user)%>
-    <button class="btn btn-default">Unfollow</button>
+    <%= button_to "Unfollow", relationships_path(user_id: @user.id), method: :delete, class: "btn btn-default" %>
   <% else %>
-      <button class="btn btn-primary">Follow </button>
+    <%= button_to "Follow", relationships_path(user_id: @user.id), class: "btn btn-primary" %>
   <% end %>
 <% end %>
