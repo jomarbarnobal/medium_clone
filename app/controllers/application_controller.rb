@@ -2,6 +2,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   before_action :configured_permitted_parameters, if: :devise_controller?
+
+  def current_user?(user)
+    current_user.id == user.id
+  end
+
+  helper_method :current_user?
+
   protected
 
     def configured_permitted_parameters

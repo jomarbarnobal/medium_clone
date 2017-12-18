@@ -1,5 +1,19 @@
 require 'rails_helper'
 
-# RSpec.describe User, type: :model do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+RSpec.describe User do
+
+  describe "following and unfollowing other users" do
+
+    let(:john) {create(:user, username: "John Doe")}
+    let(:solo) {create(:user, username: "Solo User")}
+
+    it "add relationships between the other users" do
+
+      john.follow(solo)
+      expect(john.following?(solo)).to be_truthy
+
+      john.unfollow(solo)
+      expect(john.following?(solo)).to be_falsy
+    end
+  end
+end

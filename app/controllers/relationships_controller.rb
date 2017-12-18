@@ -1,0 +1,3 @@
+class RelationshipsController < ApplicaiotnController
+  
+end

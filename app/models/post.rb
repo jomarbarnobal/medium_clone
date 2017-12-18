@@ -6,8 +6,11 @@ class Post < ApplicationRecord
   has_many :tags, through: :taggings
   delegate :username, to: :user
 
+  def self.tagged_with(name)
+    Tag.find_by(name: name).posts
+  end
+
   def all_tags=(names)
-    # name = "museic, spotify"
     self.tags = names.split(',').map do |name|
       Tag.where(name: name).first_or_create 
     end

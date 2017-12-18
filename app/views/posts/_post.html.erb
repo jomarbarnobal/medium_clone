@@ -5,7 +5,7 @@
       <%= user_avatar(post.user, size: 40)%>
     </div>
     <div class="post-info">
-      <%= link_to post.username, user_path(post.user)%>
+      <%= link_to post.username, post.user %>
       <br>
       <span class="time-created">
         <%= time_ago_in_words(post.created_at) %> ago 
@@ -16,6 +16,8 @@
     <%= post.title %>
     <br>
     <%= post.body%>
+    <br>
+    <%= post.all_tags %>
   </div>
   <div class="post-action clearfix">
     <a class="float-left" href="#">link</a>
