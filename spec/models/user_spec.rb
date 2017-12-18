@@ -14,6 +14,7 @@ RSpec.describe User do
 
       john.unfollow(solo)
       expect(john.following?(solo)).to be_falsy
+      expect(solo.followers).not_to include(john)
     end
   end
 end
